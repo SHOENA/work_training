@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>競馬ネット出走表 AI買い目メーカー</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <p class="eyebrow">競馬ネット対応</p>
+        <h1>出走表URLからAIが買い目を提案</h1>
+        <p class="lead">
+          対象レースの出走表URLを貼るだけで、AIがワイド・三連複などの買い目候補を自動で作成します。
+        </p>
+      </header>
+
+      <section class="panel">
+        <label for="raceUrl">出走表URL</label>
+        <div class="input-row">
+          <input
+            id="raceUrl"
+            type="url"
+            placeholder="https://race.netkeiba.com/race/shutuba.html?..."
+            autocomplete="off"
+          />
+          <button id="analyzeBtn" type="button">AIに相談する</button>
+        </div>
+        <p class="hint">URLはnetkeiba.comなどの出走表ページを想定しています。</p>
+      </section>
+
+      <section class="panel output" aria-live="polite">
+        <div class="output-header">
+          <h2>AIの買い目提案</h2>
+          <span id="status">URLを入力してください</span>
+        </div>
+        <div class="output-grid">
+          <article>
+            <h3>本命・対抗</h3>
+            <ul id="mainPicks" class="picks"></ul>
+          </article>
+          <article>
+            <h3>ワイド</h3>
+            <ul id="widePicks" class="picks"></ul>
+          </article>
+          <article>
+            <h3>三連複</h3>
+            <ul id="trifectaPicks" class="picks"></ul>
+          </article>
+        </div>
+        <p class="disclaimer">
+          ※ このアプリはサンプルです。実際の馬券購入は自己判断でお願いします。
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made for demo purposes. Powered by a lightweight heuristic.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
